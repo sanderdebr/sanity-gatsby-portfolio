@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
     line-height: 1.5;
     font-style: normal;
     font-stretch: normal;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: normal;
@@ -25,6 +25,8 @@ const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: none;
+    letter-spacing: -0.02em;
+    text-shadow: 0px 10px 20px rgb(0 0 0 / 10%);
   }
 
   ul,

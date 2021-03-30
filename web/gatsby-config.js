@@ -20,6 +20,13 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd && token
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Inter`],
+        display: "swap"
+      }
     }
   ]
 };

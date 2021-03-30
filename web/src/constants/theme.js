@@ -1,7 +1,7 @@
 const settings = {
-  containerWidth: "80vw",
+  containerWidth: "1600px",
   spacing: "2.5rem",
-  containerSpacing: "7.5rem"
+  containerSpacing: "6rem"
 };
 
 const breakpoints = {
@@ -29,7 +29,7 @@ const palette = {
   }
 };
 
-const baseTheme = { ...settings, ...breakpoints };
+const baseTheme = { ...settings, breakpoints };
 const light = { ...baseTheme, ...palette.light };
 const dark = { ...baseTheme, ...palette.dark };
 const theme = { light, dark };

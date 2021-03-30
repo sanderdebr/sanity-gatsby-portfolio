@@ -1,6 +1,7 @@
 const settings = {
   containerWidth: "80vw",
-  spacing: "2rem"
+  spacing: "2.5rem",
+  containerSpacing: "7.5rem"
 };
 
 const breakpoints = {

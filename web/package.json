@@ -7,7 +7,7 @@
     "build": "gatsby build",
     "clean-cache": "gatsby clean",
     "dev": "gatsby develop",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
@@ -22,9 +22,11 @@
     "gatsby-source-sanity": "^7.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "dotenv": "^8.0.0",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",

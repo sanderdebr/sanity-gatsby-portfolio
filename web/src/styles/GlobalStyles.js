@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     word-wrap: break-word;
   }
+
   html {
     min-height: 100%;
   }

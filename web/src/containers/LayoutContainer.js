@@ -1,6 +1,9 @@
 import { graphql, StaticQuery } from "gatsby";
 import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
 import Layout from "../components/layout";
+import theme from "../constants/theme";
+import GlobalStyles from "../styles/GlobalStyles";
 
 const query = graphql`
   query SiteTitleQuery {
@@ -12,12 +15,15 @@ const query = graphql`
 
 function LayoutContainer(props) {
   const [showNav, setShowNav] = useState(false);
+
   function handleShowNav() {
     setShowNav(true);
   }
+
   function handleHideNav() {
     setShowNav(false);
   }
+
   return (
     <StaticQuery
       query={query}
@@ -28,13 +34,17 @@ function LayoutContainer(props) {
           );
         }
         return (
-          <Layout
-            {...props}
-            showNav={showNav}
-            siteTitle={data.site.title}
-            onHideNav={handleHideNav}
-            onShowNav={handleShowNav}
-          />
+          <>
+            <GlobalStyles />
+            <ThemeProvider theme={theme.light}></ThemeProvider>
+            <Layout
+              {...props}
+              showNav={showNav}
+              siteTitle={data.site.title}
+              onHideNav={handleHideNav}
+              onShowNav={handleShowNav}
+            />
+          </>
         );
       }}
     />

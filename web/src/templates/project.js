@@ -4,7 +4,7 @@ import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Project from "../components/project";
 import SEO from "../components/seo";
-import Layout from "../containers/layout";
+import LayoutContainer from "../containers/LayoutContainer";
 
 export const query = graphql`
   query ProjectTemplateQuery($id: String!) {
@@ -85,7 +85,7 @@ const ProjectTemplate = props => {
   const { data, errors } = props;
   const project = data && data.sampleProject;
   return (
-    <Layout>
+    <LayoutContainer>
       {errors && <SEO title="GraphQL Error" />}
       {project && <SEO title={project.title || "Untitled"} />}
 
@@ -95,7 +95,7 @@ const ProjectTemplate = props => {
         </Container>
       )}
       {project && <Project {...project} />}
-    </Layout>
+    </LayoutContainer>
   );
 };
 

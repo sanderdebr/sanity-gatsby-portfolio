@@ -5,9 +5,10 @@ export default function Hero() {
   return (
     <StyledHero>
       <Title>
-        A design driven agency with a knack for details. Ideally agile, data driven collaborations
-        cultivate human-centered, socially inclusive solutions. We’re turning our creative
-        challenges into solutions for a better sustainable earth. Checkout{" "}
+        A design driven agency with a knack for details. Ideally agile, data
+        driven collaborations cultivate human-centered, socially inclusive
+        solutions. We’re turning our creative challenges into solutions for a
+        better sustainable earth. Checkout{" "}
       </Title>
     </StyledHero>
   );
@@ -23,7 +24,7 @@ const StyledHero = styled.div`
 `;
 
 const Title = styled.div`
-  padding: 0 ${props => props.theme.containerSpacing};
+  padding: 0 ${(props) => props.theme.containerSpacing};
   padding-top: 12rem;
   max-width: 1300px;
   width: 100%;

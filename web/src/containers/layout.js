@@ -8,12 +8,11 @@ function Layout({ children }) {
     <>
       <GlobalStyles />
       <ThemeProvider theme={theme.dark}>
-        <nav></nav>
         <StyledMain>{children}</StyledMain>
         <footer>
           <div>
-            © {new Date().getFullYear()}, Built with <a href="https://www.sanity.io">Sanity</a>{" "}
-            &amp;
+            © {new Date().getFullYear()}, Built with{" "}
+            <a href="https://www.sanity.io">Sanity</a> &amp;
             {` `}
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </div>

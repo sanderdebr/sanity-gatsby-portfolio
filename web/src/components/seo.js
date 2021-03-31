@@ -1,96 +1,45 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, keywords, title }) {
-  return (
-    <StaticQuery
-      query={detailsQuery}
-      render={data => {
-        const metaDescription = description || (data.site && data.site.description) || "";
-        const siteTitle = (data.site && data.site.title) || "";
-        const siteAuthor = (data.site && data.site.author && data.site.author.name) || "";
-        return (
-          <Helmet
-            htmlAttributes={{ lang }}
-            title={title}
-            titleTemplate={title === siteTitle ? "%s" : `%s | ${siteTitle}`}
-            meta={[
-              {
-                name: "description",
-                content: metaDescription
-              },
-              {
-                property: "og:title",
-                content: title
-              },
-              {
-                property: "og:description",
-                content: metaDescription
-              },
-              {
-                property: "og:type",
-                content: "website"
-              },
-              {
-                name: "twitter:card",
-                content: "summary"
-              },
-              {
-                name: "twitter:creator",
-                content: siteAuthor
-              },
-              {
-                name: "twitter:title",
-                content: title
-              },
-              {
-                name: "twitter:description",
-                content: metaDescription
-              }
-            ]
-              .concat(
-                keywords && keywords.length > 0
-                  ? {
-                      name: "keywords",
-                      content: keywords.join(", ")
-                    }
-                  : []
-              )
-              .concat(meta)}
-          />
-        );
-      }}
-    />
-  );
-}
-
-SEO.defaultProps = {
-  lang: "en",
-  meta: [],
-  keywords: []
-};
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired
-};
-
-export default SEO;
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site: sanitySiteSettings(_id: { eq: "siteSettings" }) {
-      title
-      description
-      keywords
-      author {
-        name
+const SEO = ({ children, title, description, image, location }) => {
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+        }
       }
     }
-  }
-`;
+  `)
+
+  return (
+    <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
+      <html lang="en" />
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="alternate icon" href="/favicon.ico" />
+      <meta name="description" content={site.siteMetadata.description} />
+      <title>{title}</title>
+
+      <meta property="og:title" content={title} key="ogtitle" />
+      <meta property="og:description" content={description} key="ogdesc" />
+      <meta propery="og:site_name" content={site.siteMetadata.title} key="ogsitename" />
+      <meta property="og:image" content={image || '/logo.svg'} />
+      {location && <meta property="og:url" content={location.href} />}
+
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={site.siteMetadata.description} />
+      <meta name="twitter:site_name" content={site.siteMetadata.title} />
+      <meta name="twitter:image" content={image || '/logo.svg'} />
+      <meta name="twitter:creator" content={site.siteMetadata.author} />
+
+      {children}
+    </Helmet>
+  )
+}
+
+export default SEO

@@ -1,7 +1,7 @@
 const settings = {
   containerWidth: "1600px",
   spacing: "2.5rem",
-  containerSpacing: "6rem"
+  containerSpacing: "6rem",
 };
 
 const breakpoints = {
@@ -9,7 +9,7 @@ const breakpoints = {
   screenSM: "750px",
   screenMD: "992px",
   screenLG: "1200px",
-  screenXL: "1600px"
+  screenXL: "1600px",
 };
 
 const palette = {
@@ -18,15 +18,15 @@ const palette = {
     textPrimary: "#673a6d",
     textSecondary: "#37364d",
     buttonPrimary: "#5a4fff",
-    buttonGhost: "transparent"
+    buttonGhost: "transparent",
   },
   dark: {
     background: "#5d4561",
     textPrimary: "#fff",
     textSecondary: "#37364d",
     buttonPrimary: "#fff",
-    buttonGhost: "transparent"
-  }
+    buttonGhost: "transparent",
+  },
 };
 
 const baseTheme = { ...settings, breakpoints };

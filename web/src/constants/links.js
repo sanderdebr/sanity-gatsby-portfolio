@@ -1,39 +1,39 @@
 const navbarLinks = [
   {
     link: "",
-    title: "Home"
+    title: "Home",
   },
   {
     link: "",
-    title: "Works"
+    title: "Works",
   },
   {
     link: "",
-    title: "Blog"
+    title: "Blog",
   },
   {
     link: "",
-    title: "Pages"
+    title: "Pages",
   },
   {
     link: "",
-    title: "Features"
-  }
+    title: "Features",
+  },
 ];
 
 const socialLinks = [
   {
     link: "",
-    title: "Behance"
+    title: "Behance",
   },
   {
     link: "",
-    title: "Instagram"
+    title: "Instagram",
   },
   {
     link: "",
-    title: "Twitter"
-  }
+    title: "Twitter",
+  },
 ];
 
 export { navbarLinks, socialLinks };

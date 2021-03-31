@@ -21,7 +21,7 @@ const StyledList = styled.ul`
 `;
 
 const StyledListItem = styled.li`
-  padding: 0 ${props => props.theme.spacing};
+  padding: 0 ${(props) => props.theme.spacing};
   margin: 0;
   color: white;
   font-size: 1.2rem;

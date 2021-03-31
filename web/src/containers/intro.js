@@ -41,7 +41,7 @@ export default function Intro() {
 
 const Box = styled.div`
   display: flex;
-  text-align: ${props => (props.textRight ? "right" : "left")};
+  text-align: ${(props) => (props.textRight ? "right" : "left")};
 `;
 
 const Top = styled.div`
@@ -49,7 +49,7 @@ const Top = styled.div`
   align-items: center;
   justify-content: space-between;
   background: black;
-  padding: 0 ${props => props.theme.spacing};
+  padding: 0 ${(props) => props.theme.spacing};
   height: 10vh;
 `;
 
@@ -70,27 +70,27 @@ const SideBox = styled.div`
   width: 160px;
   background: aqua;
 
-  flex-direction: ${props => (props.column ? "column" : "row")};
+  flex-direction: ${(props) => (props.column ? "column" : "row")};
 `;
 
 const SideWays = styled.div`
   color: white;
-  transform: ${props => (props.left ? "rotate(90deg)" : "rotate(-90deg)")};
+  transform: ${(props) => (props.left ? "rotate(90deg)" : "rotate(-90deg)")};
 `;
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 0 ${props => props.theme.containerSpacing};
+  padding: 0 ${(props) => props.theme.containerSpacing};
 
   display: flex;
-  flex-basis: ${props => props.takeSpace && "100%"};
-  justify-content: ${props => (props.justifyRight ? "flex-end" : "center")};
+  flex-basis: ${(props) => props.takeSpace && "100%"};
+  justify-content: ${(props) => (props.justifyRight ? "flex-end" : "center")};
 
-  @media (min-width: ${props => props.theme.breakpoints.screenLG}) {
-    width: ${props => props.theme.breakpoints.screenLG};
+  @media (min-width: ${(props) => props.theme.breakpoints.screenLG}) {
+    width: ${(props) => props.theme.breakpoints.screenLG};
   }
 
-  @media (min-width: ${props => props.theme.breakpoints.screenXL}) {
-    width: ${props => props.theme.breakpoints.screenXL};
+  @media (min-width: ${(props) => props.theme.breakpoints.screenXL}) {
+    width: ${(props) => props.theme.breakpoints.screenXL};
   }
 `;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { navbarLinks } from "../constants/links";
-import List from "./List";
+import { navbarLinks } from "../../constants/links";
+import List from "../List";
 
 export default function NavBar() {
   return (

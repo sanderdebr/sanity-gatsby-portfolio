@@ -1,39 +1,39 @@
 const navbarLinks = [
   {
-    link: "",
-    title: "Home",
+    link: '',
+    title: 'Home',
   },
   {
-    link: "",
-    title: "Works",
+    link: '',
+    title: 'Works',
   },
   {
-    link: "",
-    title: "Blog",
+    link: '',
+    title: 'Blog',
   },
   {
-    link: "",
-    title: "Pages",
+    link: '',
+    title: 'Pages',
   },
   {
-    link: "",
-    title: "Features",
+    link: '',
+    title: 'Features',
   },
-];
+]
 
 const socialLinks = [
   {
-    link: "",
-    title: "Behance",
+    link: '',
+    title: 'Behance',
   },
   {
-    link: "",
-    title: "Instagram",
+    link: '',
+    title: 'Instagram',
   },
   {
-    link: "",
-    title: "Twitter",
+    link: '',
+    title: 'Twitter',
   },
-];
+]
 
-export { navbarLinks, socialLinks };
+export { navbarLinks, socialLinks }

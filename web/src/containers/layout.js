@@ -24,7 +24,6 @@ function Layout({ children }) {
 
 const StyledMain = styled.main`
   width: 100%;
-  background: green;
   display: flex;
   justify-content: center;
 `;

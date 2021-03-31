@@ -1,37 +1,37 @@
 import { graphql } from "gatsby";
 import React from "react";
 import SEO from "../components/SEO";
-import Intro from "../containers/intro";
-import Layout from "../containers/layout";
 import Section from "../containers/section";
 import { mapEdgesToNodes } from "../helpers";
+import Intro from "../sections/intro";
 
 const HomePage = ({ data }) => {
-  const introContent = mapEdgesToNodes(data.allSanityIntro)[1];
+  const siteSettings = mapEdgesToNodes(data.allSanitySiteSettings);
 
   return (
-    <Layout>
-      {/* <SEO
-        title={site.title}
-        description={site.description}
-        keywords={site.keywords}
-      /> */}
+    <>
+      <SEO
+        title={siteSettings.title}
+        description={siteSettings.description}
+        keywords={siteSettings.keywords}
+      />
       <Section title="intro">
         <Intro />
       </Section>
-      <h1>{introContent.title}</h1>
-    </Layout>
+    </>
   );
 };
 
 export default HomePage;
 
 export const query = graphql`
-  query IntroQuery {
-    allSanityIntro {
+  query IndexQuery {
+    allSanitySiteSettings {
       edges {
         node {
           title
+          description
+          Keywords
         }
       }
     }

@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 export default function List({ items }) {
   return (
@@ -10,7 +10,7 @@ export default function List({ items }) {
         </a>
       ))}
     </StyledList>
-  );
+  )
 }
 
 const StyledList = styled.ul`
@@ -18,11 +18,11 @@ const StyledList = styled.ul`
   display: flex;
   padding: 0;
   margin: 0;
-`;
+`
 
 const StyledListItem = styled.li`
   padding: 0 ${(props) => props.theme.spacing};
   margin: 0;
   color: white;
   font-size: 1.2rem;
-`;
+`

@@ -1,6 +1,6 @@
 const settings = {
   containerWidth: "1600px",
-  spacing: "2.5rem",
+  spacing: "3rem",
   containerSpacing: "6rem",
 };
 

@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import Hero from "../components/Hero";
@@ -6,10 +7,25 @@ import List from "../components/List";
 import Logo from "../components/Logo";
 import NavBar from "../components/NavBar";
 import { socialLinks } from "../constants/links";
+import { mapEdgesToNodes } from "../helpers";
 
-export default function Intro() {
+export default function Intro({ data }) {
+  const { allSanityIntro } = useStaticQuery(graphql`
+    query IntroQuery {
+      allSanityIntro {
+        edges {
+          node {
+            title
+          }
+        }
+      }
+    }
+  `);
+
+  const introContent = mapEdgesToNodes(allSanityIntro)[1];
+
   return (
-    <>
+    <StyledIntro>
       <Top>
         <Logo />
         <Wrapper maxSpace justifyRight>
@@ -27,7 +43,7 @@ export default function Intro() {
           <Icon type="arrow" fill="white" marginTop />
         </SideBox>
         <Wrapper>
-          <Hero />
+          <Hero title={introContent.title} />
         </Wrapper>
         <SideBox>
           <SideWays left>
@@ -35,9 +51,13 @@ export default function Intro() {
           </SideWays>
         </SideBox>
       </Main>
-    </>
+    </StyledIntro>
   );
 }
+
+const StyledIntro = styled.section`
+  background: black;
+`;
 
 const Box = styled.div`
   display: flex;
@@ -67,9 +87,8 @@ const SideBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 160px;
-  background: aqua;
-
+  width: 100px;
+  height: 90vh;
   flex-direction: ${(props) => (props.column ? "column" : "row")};
 `;
 
@@ -81,7 +100,6 @@ const SideWays = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   padding: 0 ${(props) => props.theme.containerSpacing};
-
   display: flex;
   flex-basis: ${(props) => props.takeSpace && "100%"};
   justify-content: ${(props) => (props.justifyRight ? "flex-end" : "center")};

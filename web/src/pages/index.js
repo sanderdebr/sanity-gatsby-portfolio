@@ -1,6 +1,5 @@
 import { graphql } from "gatsby";
 import React from "react";
-import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
 import Intro from "../containers/intro";
 import Layout from "../containers/layout";
@@ -61,7 +60,7 @@ const IndexPage = props => {
   if (errors) {
     return (
       <Layout>
-        <GraphQLErrorList errors={errors} />
+        <h1>error</h1>
       </Layout>
     );
   }
